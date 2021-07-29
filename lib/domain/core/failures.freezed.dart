@@ -21,6 +21,12 @@ class _$ValueFailureTearOff {
       failureValue,
     );
   }
+
+  _InvalideEmail<T> invalidEmail<T>(T failureValue) {
+    return _InvalideEmail<T>(
+      failureValue,
+    );
+  }
 }
 
 /// @nodoc
@@ -33,22 +39,26 @@ mixin _$ValueFailure<T> {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(T failureValue) empty,
+    required TResult Function(T failureValue) invalidEmail,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(T failureValue)? empty,
+    TResult Function(T failureValue)? invalidEmail,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Empty<T> value) empty,
+    required TResult Function(_InvalideEmail<T> value) invalidEmail,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Empty<T> value)? empty,
+    TResult Function(_InvalideEmail<T> value)? invalidEmail,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -84,7 +94,7 @@ class _$ValueFailureCopyWithImpl<T, $Res>
           ? _value.failureValue
           : failureValue // ignore: cast_nullable_to_non_nullable
               as T,
-    ) as ValueFailure<T>);
+    ));
   }
 }
 
@@ -121,15 +131,23 @@ class __$EmptyCopyWithImpl<T, $Res> extends _$ValueFailureCopyWithImpl<T, $Res>
 
 /// @nodoc
 
-class _$_Empty<T> implements _Empty<T> {
+class _$_Empty<T> with DiagnosticableTreeMixin implements _Empty<T> {
   const _$_Empty(this.failureValue);
 
   @override
   final T failureValue;
 
   @override
-  String toString() {
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'ValueFailure<$T>.empty(failureValue: $failureValue)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'ValueFailure<$T>.empty'))
+      ..add(DiagnosticsProperty('failureValue', failureValue));
   }
 
   @override
@@ -154,6 +172,7 @@ class _$_Empty<T> implements _Empty<T> {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(T failureValue) empty,
+    required TResult Function(T failureValue) invalidEmail,
   }) {
     return empty(failureValue);
   }
@@ -162,6 +181,7 @@ class _$_Empty<T> implements _Empty<T> {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(T failureValue)? empty,
+    TResult Function(T failureValue)? invalidEmail,
     required TResult orElse(),
   }) {
     if (empty != null) {
@@ -174,6 +194,7 @@ class _$_Empty<T> implements _Empty<T> {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Empty<T> value) empty,
+    required TResult Function(_InvalideEmail<T> value) invalidEmail,
   }) {
     return empty(this);
   }
@@ -182,6 +203,7 @@ class _$_Empty<T> implements _Empty<T> {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Empty<T> value)? empty,
+    TResult Function(_InvalideEmail<T> value)? invalidEmail,
     required TResult orElse(),
   }) {
     if (empty != null) {
@@ -199,5 +221,136 @@ abstract class _Empty<T> implements ValueFailure<T> {
   @override
   @JsonKey(ignore: true)
   _$EmptyCopyWith<T, _Empty<T>> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$InvalideEmailCopyWith<T, $Res>
+    implements $ValueFailureCopyWith<T, $Res> {
+  factory _$InvalideEmailCopyWith(
+          _InvalideEmail<T> value, $Res Function(_InvalideEmail<T>) then) =
+      __$InvalideEmailCopyWithImpl<T, $Res>;
+  @override
+  $Res call({T failureValue});
+}
+
+/// @nodoc
+class __$InvalideEmailCopyWithImpl<T, $Res>
+    extends _$ValueFailureCopyWithImpl<T, $Res>
+    implements _$InvalideEmailCopyWith<T, $Res> {
+  __$InvalideEmailCopyWithImpl(
+      _InvalideEmail<T> _value, $Res Function(_InvalideEmail<T>) _then)
+      : super(_value, (v) => _then(v as _InvalideEmail<T>));
+
+  @override
+  _InvalideEmail<T> get _value => super._value as _InvalideEmail<T>;
+
+  @override
+  $Res call({
+    Object? failureValue = freezed,
+  }) {
+    return _then(_InvalideEmail<T>(
+      failureValue == freezed
+          ? _value.failureValue
+          : failureValue // ignore: cast_nullable_to_non_nullable
+              as T,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_InvalideEmail<T>
+    with DiagnosticableTreeMixin
+    implements _InvalideEmail<T> {
+  const _$_InvalideEmail(this.failureValue);
+
+  @override
+  final T failureValue;
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'ValueFailure<$T>.invalidEmail(failureValue: $failureValue)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'ValueFailure<$T>.invalidEmail'))
+      ..add(DiagnosticsProperty('failureValue', failureValue));
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is _InvalideEmail<T> &&
+            (identical(other.failureValue, failureValue) ||
+                const DeepCollectionEquality()
+                    .equals(other.failureValue, failureValue)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(failureValue);
+
+  @JsonKey(ignore: true)
+  @override
+  _$InvalideEmailCopyWith<T, _InvalideEmail<T>> get copyWith =>
+      __$InvalideEmailCopyWithImpl<T, _InvalideEmail<T>>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(T failureValue) empty,
+    required TResult Function(T failureValue) invalidEmail,
+  }) {
+    return invalidEmail(failureValue);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(T failureValue)? empty,
+    TResult Function(T failureValue)? invalidEmail,
+    required TResult orElse(),
+  }) {
+    if (invalidEmail != null) {
+      return invalidEmail(failureValue);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Empty<T> value) empty,
+    required TResult Function(_InvalideEmail<T> value) invalidEmail,
+  }) {
+    return invalidEmail(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Empty<T> value)? empty,
+    TResult Function(_InvalideEmail<T> value)? invalidEmail,
+    required TResult orElse(),
+  }) {
+    if (invalidEmail != null) {
+      return invalidEmail(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _InvalideEmail<T> implements ValueFailure<T> {
+  const factory _InvalideEmail(T failureValue) = _$_InvalideEmail<T>;
+
+  @override
+  T get failureValue => throw _privateConstructorUsedError;
+  @override
+  @JsonKey(ignore: true)
+  _$InvalideEmailCopyWith<T, _InvalideEmail<T>> get copyWith =>
       throw _privateConstructorUsedError;
 }
