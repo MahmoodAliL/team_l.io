@@ -24,18 +24,18 @@ dependencies:
   flutter:
     sdk: flutter
   cupertino_icons: ^1.0.3
+  dartz: ^0.10.0-nullsafety.2
+  flutter_form_builder: ^6.0.1
   freezed_annotation: ^0.14.2
   injectable: ^1.4.1
-  dartz: ^0.10.0-nullsafety.2
   very_good_analysis: ^2.1.2
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  build_runner: 
+  build_runner: null
   freezed: ^0.14.2
   very_good_analysis: ^2.1.2
-
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
