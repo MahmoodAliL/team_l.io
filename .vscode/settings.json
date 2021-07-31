@@ -5,7 +5,9 @@
         "**/.hg": true,
         "**/CVS": true,
         "**/.DS_Store": true,
-        "**/order_project.freezed.dart": false
+        "**/order_project.freezed.dart": false,
+        "**/failures.freezed.dart": true,
+        "**/project_failure.freezed.dart": false
     },
     "explorerExclude.backup": null
 }

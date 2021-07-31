@@ -172,14 +172,15 @@ class __$ProjectCopyWithImpl<$Res> extends _$ProjectCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_Project implements _Project {
+class _$_Project extends _Project {
   const _$_Project(
       {required this.name,
       required this.phoneNumber,
       required this.emailAddress,
       required this.projectName,
       required this.balance,
-      required this.projectDetail});
+      required this.projectDetail})
+      : super._();
 
   @override
   final String name;
@@ -238,7 +239,7 @@ class _$_Project implements _Project {
       __$ProjectCopyWithImpl<_Project>(this, _$identity);
 }
 
-abstract class _Project implements Project {
+abstract class _Project extends Project {
   const factory _Project(
       {required String name,
       required String phoneNumber,
@@ -246,6 +247,7 @@ abstract class _Project implements Project {
       required String projectName,
       required Balance balance,
       required String projectDetail}) = _$_Project;
+  const _Project._() : super._();
 
   @override
   String get name => throw _privateConstructorUsedError;
