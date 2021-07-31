@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
-part of 'order_project.dart';
+part of 'project.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -13,17 +13,17 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
-class _$OrderProjectTearOff {
-  const _$OrderProjectTearOff();
+class _$ProjectTearOff {
+  const _$ProjectTearOff();
 
-  _OrderProject call(
+  _Project call(
       {required String name,
       required String phoneNumber,
       required String emailAddress,
       required String projectName,
       required Balance balance,
       required String projectDetail}) {
-    return _OrderProject(
+    return _Project(
       name: name,
       phoneNumber: phoneNumber,
       emailAddress: emailAddress,
@@ -35,10 +35,10 @@ class _$OrderProjectTearOff {
 }
 
 /// @nodoc
-const $OrderProject = _$OrderProjectTearOff();
+const $Project = _$ProjectTearOff();
 
 /// @nodoc
-mixin _$OrderProject {
+mixin _$Project {
   String get name => throw _privateConstructorUsedError;
   String get phoneNumber => throw _privateConstructorUsedError;
   String get emailAddress => throw _privateConstructorUsedError;
@@ -47,15 +47,13 @@ mixin _$OrderProject {
   String get projectDetail => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $OrderProjectCopyWith<OrderProject> get copyWith =>
-      throw _privateConstructorUsedError;
+  $ProjectCopyWith<Project> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $OrderProjectCopyWith<$Res> {
-  factory $OrderProjectCopyWith(
-          OrderProject value, $Res Function(OrderProject) then) =
-      _$OrderProjectCopyWithImpl<$Res>;
+abstract class $ProjectCopyWith<$Res> {
+  factory $ProjectCopyWith(Project value, $Res Function(Project) then) =
+      _$ProjectCopyWithImpl<$Res>;
   $Res call(
       {String name,
       String phoneNumber,
@@ -66,12 +64,12 @@ abstract class $OrderProjectCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$OrderProjectCopyWithImpl<$Res> implements $OrderProjectCopyWith<$Res> {
-  _$OrderProjectCopyWithImpl(this._value, this._then);
+class _$ProjectCopyWithImpl<$Res> implements $ProjectCopyWith<$Res> {
+  _$ProjectCopyWithImpl(this._value, this._then);
 
-  final OrderProject _value;
+  final Project _value;
   // ignore: unused_field
-  final $Res Function(OrderProject) _then;
+  final $Res Function(Project) _then;
 
   @override
   $Res call({
@@ -112,11 +110,9 @@ class _$OrderProjectCopyWithImpl<$Res> implements $OrderProjectCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class _$OrderProjectCopyWith<$Res>
-    implements $OrderProjectCopyWith<$Res> {
-  factory _$OrderProjectCopyWith(
-          _OrderProject value, $Res Function(_OrderProject) then) =
-      __$OrderProjectCopyWithImpl<$Res>;
+abstract class _$ProjectCopyWith<$Res> implements $ProjectCopyWith<$Res> {
+  factory _$ProjectCopyWith(_Project value, $Res Function(_Project) then) =
+      __$ProjectCopyWithImpl<$Res>;
   @override
   $Res call(
       {String name,
@@ -128,14 +124,13 @@ abstract class _$OrderProjectCopyWith<$Res>
 }
 
 /// @nodoc
-class __$OrderProjectCopyWithImpl<$Res> extends _$OrderProjectCopyWithImpl<$Res>
-    implements _$OrderProjectCopyWith<$Res> {
-  __$OrderProjectCopyWithImpl(
-      _OrderProject _value, $Res Function(_OrderProject) _then)
-      : super(_value, (v) => _then(v as _OrderProject));
+class __$ProjectCopyWithImpl<$Res> extends _$ProjectCopyWithImpl<$Res>
+    implements _$ProjectCopyWith<$Res> {
+  __$ProjectCopyWithImpl(_Project _value, $Res Function(_Project) _then)
+      : super(_value, (v) => _then(v as _Project));
 
   @override
-  _OrderProject get _value => super._value as _OrderProject;
+  _Project get _value => super._value as _Project;
 
   @override
   $Res call({
@@ -146,7 +141,7 @@ class __$OrderProjectCopyWithImpl<$Res> extends _$OrderProjectCopyWithImpl<$Res>
     Object? balance = freezed,
     Object? projectDetail = freezed,
   }) {
-    return _then(_OrderProject(
+    return _then(_Project(
       name: name == freezed
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -177,8 +172,8 @@ class __$OrderProjectCopyWithImpl<$Res> extends _$OrderProjectCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_OrderProject implements _OrderProject {
-  const _$_OrderProject(
+class _$_Project implements _Project {
+  const _$_Project(
       {required this.name,
       required this.phoneNumber,
       required this.emailAddress,
@@ -201,13 +196,13 @@ class _$_OrderProject implements _OrderProject {
 
   @override
   String toString() {
-    return 'OrderProject(name: $name, phoneNumber: $phoneNumber, emailAddress: $emailAddress, projectName: $projectName, balance: $balance, projectDetail: $projectDetail)';
+    return 'Project(name: $name, phoneNumber: $phoneNumber, emailAddress: $emailAddress, projectName: $projectName, balance: $balance, projectDetail: $projectDetail)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _OrderProject &&
+        (other is _Project &&
             (identical(other.name, name) ||
                 const DeepCollectionEquality().equals(other.name, name)) &&
             (identical(other.phoneNumber, phoneNumber) ||
@@ -239,18 +234,18 @@ class _$_OrderProject implements _OrderProject {
 
   @JsonKey(ignore: true)
   @override
-  _$OrderProjectCopyWith<_OrderProject> get copyWith =>
-      __$OrderProjectCopyWithImpl<_OrderProject>(this, _$identity);
+  _$ProjectCopyWith<_Project> get copyWith =>
+      __$ProjectCopyWithImpl<_Project>(this, _$identity);
 }
 
-abstract class _OrderProject implements OrderProject {
-  const factory _OrderProject(
+abstract class _Project implements Project {
+  const factory _Project(
       {required String name,
       required String phoneNumber,
       required String emailAddress,
       required String projectName,
       required Balance balance,
-      required String projectDetail}) = _$_OrderProject;
+      required String projectDetail}) = _$_Project;
 
   @override
   String get name => throw _privateConstructorUsedError;
@@ -266,6 +261,6 @@ abstract class _OrderProject implements OrderProject {
   String get projectDetail => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$OrderProjectCopyWith<_OrderProject> get copyWith =>
+  _$ProjectCopyWith<_Project> get copyWith =>
       throw _privateConstructorUsedError;
 }

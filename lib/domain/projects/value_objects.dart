@@ -1,4 +1,5 @@
-import 'package:teaml/domain/orders/value_validators.dart';
+
+import 'package:teaml/domain/projects/value_validators.dart';
 
 class Balance {
   Balance({required int selectedValueIndex}) {
