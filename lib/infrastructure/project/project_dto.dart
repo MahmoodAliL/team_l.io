@@ -2,16 +2,16 @@ import 'package:flutter/foundation.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:teaml/domain/projects/project.dart';
 import 'package:teaml/domain/projects/value_objects.dart';
-import 'package:json_serializable/json_serializable.dart';
 
 part 'project_dto.freezed.dart';
-
 part 'project_dto.g.dart';
 
 @freezed
 abstract class ProjectDto implements _$ProjectDto {
-
   const ProjectDto._();
+  
+  factory ProjectDto.fromJson(Map<String, dynamic> json) =>
+      _$ProjectDtoFromJson(json);
 
   const factory ProjectDto({
     required String name,
@@ -23,7 +23,8 @@ abstract class ProjectDto implements _$ProjectDto {
   }) = _ProjectDto;
 
   factory ProjectDto.fromDomain(Project project) {
-    return ProjectDto(name: project.name,
+    return ProjectDto(
+        name: project.name,
         phoneNumber: project.phoneNumber,
         emailAddress: project.emailAddress,
         projectName: project.projectName,
@@ -40,7 +41,4 @@ abstract class ProjectDto implements _$ProjectDto {
         balance: Balance(selectedValueIndex: balance),
         projectDetail: projectDetail);
   }
-
-  factory ProjectDto.fromJson(Map<String, dynamic> json) =>
-      _$ProjectDtoFromJson(json);
 }
