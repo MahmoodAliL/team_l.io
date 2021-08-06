@@ -9,4 +9,6 @@ class Balance {
   static const balanceValues = ['100 - 400', '400 - 800'];
 
   String get value => balanceValues[_selectedValueIndex];
+
+  int get balanceValueIndex => _selectedValueIndex;
 }
