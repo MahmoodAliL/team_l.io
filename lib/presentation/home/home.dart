@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:teaml/presentation/home/project_form/project_form.dart';
 import 'package:teaml/presentation/home/widgets/footer.dart';
 import 'package:teaml/presentation/home/widgets/header.dart';
-import 'package:teaml/presentation/home/widgets/project_form/project_form.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -11,9 +11,9 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       body: ListView(
         children: const [
-          HeaderWidget(),
+          //HeaderWidget(),
           ProjectFormWidget(),
-          FooterWidget(),
+         // FooterWidget(),
         ],
       ),
     );

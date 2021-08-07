@@ -4,6 +4,6 @@ import 'package:teaml/injectable.dart';
 import 'package:teaml/presentation/core/app_widgets.dart';
 
 void main() {
-  configureInjection(Environment.prod);
+  //configureInjection(Environment.prod);
   runApp(const AppWidget());
 }
