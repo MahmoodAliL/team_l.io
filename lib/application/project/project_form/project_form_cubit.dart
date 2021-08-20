@@ -15,13 +15,14 @@ class ProjectFormCubit extends Cubit<ProjectFormState> {
 
   final IProjectRepository _repostiry;
 
-  Future<void> projectAdded(Project project) async {
-    //TODO: try to remove project from state
-    emit(state.copyWith(isSubmitting: true, project: project));
-    final failureOrSuccess = await _repostiry.addProject(state.project);
-    emit(state.copyWith(
-      isSubmitting: false,
-      failureOrSuccess: some(failureOrSuccess),
-    ),);
+  Future<void> projectFormSubmitted(Project project) async {
+    emit(state.copyWith(isSubmitting: true));
+    final failureOrSuccess = await _repostiry.addProject(project);
+    emit(
+      state.copyWith(
+        isSubmitting: false,
+        failureOrSuccess: some(failureOrSuccess),
+      ),
+    );
   }
 }

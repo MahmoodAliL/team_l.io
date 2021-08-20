@@ -21,19 +21,21 @@ class _$ProjectDtoTearOff {
   const _$ProjectDtoTearOff();
 
   _ProjectDto call(
-      {required String name,
-      required String phoneNumber,
-      required String emailAddress,
-      required String projectName,
+      {required String clientName,
+      required String clinetPhoneNumber,
+      required String clientEmail,
+      required String name,
       required int balance,
-      required String projectDetail}) {
+      required String detail,
+      @ServerTimestampConverter() required FieldValue serverTimestamp}) {
     return _ProjectDto(
+      clientName: clientName,
+      clinetPhoneNumber: clinetPhoneNumber,
+      clientEmail: clientEmail,
       name: name,
-      phoneNumber: phoneNumber,
-      emailAddress: emailAddress,
-      projectName: projectName,
       balance: balance,
-      projectDetail: projectDetail,
+      detail: detail,
+      serverTimestamp: serverTimestamp,
     );
   }
 
@@ -47,12 +49,14 @@ const $ProjectDto = _$ProjectDtoTearOff();
 
 /// @nodoc
 mixin _$ProjectDto {
+  String get clientName => throw _privateConstructorUsedError;
+  String get clinetPhoneNumber => throw _privateConstructorUsedError;
+  String get clientEmail => throw _privateConstructorUsedError;
   String get name => throw _privateConstructorUsedError;
-  String get phoneNumber => throw _privateConstructorUsedError;
-  String get emailAddress => throw _privateConstructorUsedError;
-  String get projectName => throw _privateConstructorUsedError;
   int get balance => throw _privateConstructorUsedError;
-  String get projectDetail => throw _privateConstructorUsedError;
+  String get detail => throw _privateConstructorUsedError;
+  @ServerTimestampConverter()
+  FieldValue get serverTimestamp => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -66,12 +70,13 @@ abstract class $ProjectDtoCopyWith<$Res> {
           ProjectDto value, $Res Function(ProjectDto) then) =
       _$ProjectDtoCopyWithImpl<$Res>;
   $Res call(
-      {String name,
-      String phoneNumber,
-      String emailAddress,
-      String projectName,
+      {String clientName,
+      String clinetPhoneNumber,
+      String clientEmail,
+      String name,
       int balance,
-      String projectDetail});
+      String detail,
+      @ServerTimestampConverter() FieldValue serverTimestamp});
 }
 
 /// @nodoc
@@ -84,38 +89,43 @@ class _$ProjectDtoCopyWithImpl<$Res> implements $ProjectDtoCopyWith<$Res> {
 
   @override
   $Res call({
+    Object? clientName = freezed,
+    Object? clinetPhoneNumber = freezed,
+    Object? clientEmail = freezed,
     Object? name = freezed,
-    Object? phoneNumber = freezed,
-    Object? emailAddress = freezed,
-    Object? projectName = freezed,
     Object? balance = freezed,
-    Object? projectDetail = freezed,
+    Object? detail = freezed,
+    Object? serverTimestamp = freezed,
   }) {
     return _then(_value.copyWith(
+      clientName: clientName == freezed
+          ? _value.clientName
+          : clientName // ignore: cast_nullable_to_non_nullable
+              as String,
+      clinetPhoneNumber: clinetPhoneNumber == freezed
+          ? _value.clinetPhoneNumber
+          : clinetPhoneNumber // ignore: cast_nullable_to_non_nullable
+              as String,
+      clientEmail: clientEmail == freezed
+          ? _value.clientEmail
+          : clientEmail // ignore: cast_nullable_to_non_nullable
+              as String,
       name: name == freezed
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
-              as String,
-      phoneNumber: phoneNumber == freezed
-          ? _value.phoneNumber
-          : phoneNumber // ignore: cast_nullable_to_non_nullable
-              as String,
-      emailAddress: emailAddress == freezed
-          ? _value.emailAddress
-          : emailAddress // ignore: cast_nullable_to_non_nullable
-              as String,
-      projectName: projectName == freezed
-          ? _value.projectName
-          : projectName // ignore: cast_nullable_to_non_nullable
               as String,
       balance: balance == freezed
           ? _value.balance
           : balance // ignore: cast_nullable_to_non_nullable
               as int,
-      projectDetail: projectDetail == freezed
-          ? _value.projectDetail
-          : projectDetail // ignore: cast_nullable_to_non_nullable
+      detail: detail == freezed
+          ? _value.detail
+          : detail // ignore: cast_nullable_to_non_nullable
               as String,
+      serverTimestamp: serverTimestamp == freezed
+          ? _value.serverTimestamp
+          : serverTimestamp // ignore: cast_nullable_to_non_nullable
+              as FieldValue,
     ));
   }
 }
@@ -127,12 +137,13 @@ abstract class _$ProjectDtoCopyWith<$Res> implements $ProjectDtoCopyWith<$Res> {
       __$ProjectDtoCopyWithImpl<$Res>;
   @override
   $Res call(
-      {String name,
-      String phoneNumber,
-      String emailAddress,
-      String projectName,
+      {String clientName,
+      String clinetPhoneNumber,
+      String clientEmail,
+      String name,
       int balance,
-      String projectDetail});
+      String detail,
+      @ServerTimestampConverter() FieldValue serverTimestamp});
 }
 
 /// @nodoc
@@ -147,38 +158,43 @@ class __$ProjectDtoCopyWithImpl<$Res> extends _$ProjectDtoCopyWithImpl<$Res>
 
   @override
   $Res call({
+    Object? clientName = freezed,
+    Object? clinetPhoneNumber = freezed,
+    Object? clientEmail = freezed,
     Object? name = freezed,
-    Object? phoneNumber = freezed,
-    Object? emailAddress = freezed,
-    Object? projectName = freezed,
     Object? balance = freezed,
-    Object? projectDetail = freezed,
+    Object? detail = freezed,
+    Object? serverTimestamp = freezed,
   }) {
     return _then(_ProjectDto(
+      clientName: clientName == freezed
+          ? _value.clientName
+          : clientName // ignore: cast_nullable_to_non_nullable
+              as String,
+      clinetPhoneNumber: clinetPhoneNumber == freezed
+          ? _value.clinetPhoneNumber
+          : clinetPhoneNumber // ignore: cast_nullable_to_non_nullable
+              as String,
+      clientEmail: clientEmail == freezed
+          ? _value.clientEmail
+          : clientEmail // ignore: cast_nullable_to_non_nullable
+              as String,
       name: name == freezed
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
-              as String,
-      phoneNumber: phoneNumber == freezed
-          ? _value.phoneNumber
-          : phoneNumber // ignore: cast_nullable_to_non_nullable
-              as String,
-      emailAddress: emailAddress == freezed
-          ? _value.emailAddress
-          : emailAddress // ignore: cast_nullable_to_non_nullable
-              as String,
-      projectName: projectName == freezed
-          ? _value.projectName
-          : projectName // ignore: cast_nullable_to_non_nullable
               as String,
       balance: balance == freezed
           ? _value.balance
           : balance // ignore: cast_nullable_to_non_nullable
               as int,
-      projectDetail: projectDetail == freezed
-          ? _value.projectDetail
-          : projectDetail // ignore: cast_nullable_to_non_nullable
+      detail: detail == freezed
+          ? _value.detail
+          : detail // ignore: cast_nullable_to_non_nullable
               as String,
+      serverTimestamp: serverTimestamp == freezed
+          ? _value.serverTimestamp
+          : serverTimestamp // ignore: cast_nullable_to_non_nullable
+              as FieldValue,
     ));
   }
 }
@@ -187,33 +203,37 @@ class __$ProjectDtoCopyWithImpl<$Res> extends _$ProjectDtoCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_ProjectDto extends _ProjectDto with DiagnosticableTreeMixin {
   const _$_ProjectDto(
-      {required this.name,
-      required this.phoneNumber,
-      required this.emailAddress,
-      required this.projectName,
+      {required this.clientName,
+      required this.clinetPhoneNumber,
+      required this.clientEmail,
+      required this.name,
       required this.balance,
-      required this.projectDetail})
+      required this.detail,
+      @ServerTimestampConverter() required this.serverTimestamp})
       : super._();
 
   factory _$_ProjectDto.fromJson(Map<String, dynamic> json) =>
       _$_$_ProjectDtoFromJson(json);
 
   @override
+  final String clientName;
+  @override
+  final String clinetPhoneNumber;
+  @override
+  final String clientEmail;
+  @override
   final String name;
-  @override
-  final String phoneNumber;
-  @override
-  final String emailAddress;
-  @override
-  final String projectName;
   @override
   final int balance;
   @override
-  final String projectDetail;
+  final String detail;
+  @override
+  @ServerTimestampConverter()
+  final FieldValue serverTimestamp;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'ProjectDto(name: $name, phoneNumber: $phoneNumber, emailAddress: $emailAddress, projectName: $projectName, balance: $balance, projectDetail: $projectDetail)';
+    return 'ProjectDto(clientName: $clientName, clinetPhoneNumber: $clinetPhoneNumber, clientEmail: $clientEmail, name: $name, balance: $balance, detail: $detail, serverTimestamp: $serverTimestamp)';
   }
 
   @override
@@ -221,46 +241,50 @@ class _$_ProjectDto extends _ProjectDto with DiagnosticableTreeMixin {
     super.debugFillProperties(properties);
     properties
       ..add(DiagnosticsProperty('type', 'ProjectDto'))
+      ..add(DiagnosticsProperty('clientName', clientName))
+      ..add(DiagnosticsProperty('clinetPhoneNumber', clinetPhoneNumber))
+      ..add(DiagnosticsProperty('clientEmail', clientEmail))
       ..add(DiagnosticsProperty('name', name))
-      ..add(DiagnosticsProperty('phoneNumber', phoneNumber))
-      ..add(DiagnosticsProperty('emailAddress', emailAddress))
-      ..add(DiagnosticsProperty('projectName', projectName))
       ..add(DiagnosticsProperty('balance', balance))
-      ..add(DiagnosticsProperty('projectDetail', projectDetail));
+      ..add(DiagnosticsProperty('detail', detail))
+      ..add(DiagnosticsProperty('serverTimestamp', serverTimestamp));
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _ProjectDto &&
+            (identical(other.clientName, clientName) ||
+                const DeepCollectionEquality()
+                    .equals(other.clientName, clientName)) &&
+            (identical(other.clinetPhoneNumber, clinetPhoneNumber) ||
+                const DeepCollectionEquality()
+                    .equals(other.clinetPhoneNumber, clinetPhoneNumber)) &&
+            (identical(other.clientEmail, clientEmail) ||
+                const DeepCollectionEquality()
+                    .equals(other.clientEmail, clientEmail)) &&
             (identical(other.name, name) ||
                 const DeepCollectionEquality().equals(other.name, name)) &&
-            (identical(other.phoneNumber, phoneNumber) ||
-                const DeepCollectionEquality()
-                    .equals(other.phoneNumber, phoneNumber)) &&
-            (identical(other.emailAddress, emailAddress) ||
-                const DeepCollectionEquality()
-                    .equals(other.emailAddress, emailAddress)) &&
-            (identical(other.projectName, projectName) ||
-                const DeepCollectionEquality()
-                    .equals(other.projectName, projectName)) &&
             (identical(other.balance, balance) ||
                 const DeepCollectionEquality()
                     .equals(other.balance, balance)) &&
-            (identical(other.projectDetail, projectDetail) ||
+            (identical(other.detail, detail) ||
+                const DeepCollectionEquality().equals(other.detail, detail)) &&
+            (identical(other.serverTimestamp, serverTimestamp) ||
                 const DeepCollectionEquality()
-                    .equals(other.projectDetail, projectDetail)));
+                    .equals(other.serverTimestamp, serverTimestamp)));
   }
 
   @override
   int get hashCode =>
       runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(clientName) ^
+      const DeepCollectionEquality().hash(clinetPhoneNumber) ^
+      const DeepCollectionEquality().hash(clientEmail) ^
       const DeepCollectionEquality().hash(name) ^
-      const DeepCollectionEquality().hash(phoneNumber) ^
-      const DeepCollectionEquality().hash(emailAddress) ^
-      const DeepCollectionEquality().hash(projectName) ^
       const DeepCollectionEquality().hash(balance) ^
-      const DeepCollectionEquality().hash(projectDetail);
+      const DeepCollectionEquality().hash(detail) ^
+      const DeepCollectionEquality().hash(serverTimestamp);
 
   @JsonKey(ignore: true)
   @override
@@ -275,29 +299,34 @@ class _$_ProjectDto extends _ProjectDto with DiagnosticableTreeMixin {
 
 abstract class _ProjectDto extends ProjectDto {
   const factory _ProjectDto(
-      {required String name,
-      required String phoneNumber,
-      required String emailAddress,
-      required String projectName,
-      required int balance,
-      required String projectDetail}) = _$_ProjectDto;
+          {required String clientName,
+          required String clinetPhoneNumber,
+          required String clientEmail,
+          required String name,
+          required int balance,
+          required String detail,
+          @ServerTimestampConverter() required FieldValue serverTimestamp}) =
+      _$_ProjectDto;
   const _ProjectDto._() : super._();
 
   factory _ProjectDto.fromJson(Map<String, dynamic> json) =
       _$_ProjectDto.fromJson;
 
   @override
+  String get clientName => throw _privateConstructorUsedError;
+  @override
+  String get clinetPhoneNumber => throw _privateConstructorUsedError;
+  @override
+  String get clientEmail => throw _privateConstructorUsedError;
+  @override
   String get name => throw _privateConstructorUsedError;
-  @override
-  String get phoneNumber => throw _privateConstructorUsedError;
-  @override
-  String get emailAddress => throw _privateConstructorUsedError;
-  @override
-  String get projectName => throw _privateConstructorUsedError;
   @override
   int get balance => throw _privateConstructorUsedError;
   @override
-  String get projectDetail => throw _privateConstructorUsedError;
+  String get detail => throw _privateConstructorUsedError;
+  @override
+  @ServerTimestampConverter()
+  FieldValue get serverTimestamp => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$ProjectDtoCopyWith<_ProjectDto> get copyWith =>

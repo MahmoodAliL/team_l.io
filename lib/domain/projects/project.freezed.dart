@@ -12,25 +12,33 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
+Project _$ProjectFromJson(Map<String, dynamic> json) {
+  return _Project.fromJson(json);
+}
+
 /// @nodoc
 class _$ProjectTearOff {
   const _$ProjectTearOff();
 
   _Project call(
-      {required String name,
-      required String phoneNumber,
-      required String emailAddress,
-      required String projectName,
-      required Balance balance,
-      required String projectDetail}) {
+      {required String clientName,
+      required String clientPhoneNumber,
+      required String clientEmail,
+      required String name,
+      @BalanceConverter() required Balance balance,
+      required String detail}) {
     return _Project(
+      clientName: clientName,
+      clientPhoneNumber: clientPhoneNumber,
+      clientEmail: clientEmail,
       name: name,
-      phoneNumber: phoneNumber,
-      emailAddress: emailAddress,
-      projectName: projectName,
       balance: balance,
-      projectDetail: projectDetail,
+      detail: detail,
     );
+  }
+
+  Project fromJson(Map<String, Object> json) {
+    return Project.fromJson(json);
   }
 }
 
@@ -39,13 +47,15 @@ const $Project = _$ProjectTearOff();
 
 /// @nodoc
 mixin _$Project {
+  String get clientName => throw _privateConstructorUsedError;
+  String get clientPhoneNumber => throw _privateConstructorUsedError;
+  String get clientEmail => throw _privateConstructorUsedError;
   String get name => throw _privateConstructorUsedError;
-  String get phoneNumber => throw _privateConstructorUsedError;
-  String get emailAddress => throw _privateConstructorUsedError;
-  String get projectName => throw _privateConstructorUsedError;
+  @BalanceConverter()
   Balance get balance => throw _privateConstructorUsedError;
-  String get projectDetail => throw _privateConstructorUsedError;
+  String get detail => throw _privateConstructorUsedError;
 
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $ProjectCopyWith<Project> get copyWith => throw _privateConstructorUsedError;
 }
@@ -55,12 +65,12 @@ abstract class $ProjectCopyWith<$Res> {
   factory $ProjectCopyWith(Project value, $Res Function(Project) then) =
       _$ProjectCopyWithImpl<$Res>;
   $Res call(
-      {String name,
-      String phoneNumber,
-      String emailAddress,
-      String projectName,
-      Balance balance,
-      String projectDetail});
+      {String clientName,
+      String clientPhoneNumber,
+      String clientEmail,
+      String name,
+      @BalanceConverter() Balance balance,
+      String detail});
 }
 
 /// @nodoc
@@ -73,37 +83,37 @@ class _$ProjectCopyWithImpl<$Res> implements $ProjectCopyWith<$Res> {
 
   @override
   $Res call({
+    Object? clientName = freezed,
+    Object? clientPhoneNumber = freezed,
+    Object? clientEmail = freezed,
     Object? name = freezed,
-    Object? phoneNumber = freezed,
-    Object? emailAddress = freezed,
-    Object? projectName = freezed,
     Object? balance = freezed,
-    Object? projectDetail = freezed,
+    Object? detail = freezed,
   }) {
     return _then(_value.copyWith(
+      clientName: clientName == freezed
+          ? _value.clientName
+          : clientName // ignore: cast_nullable_to_non_nullable
+              as String,
+      clientPhoneNumber: clientPhoneNumber == freezed
+          ? _value.clientPhoneNumber
+          : clientPhoneNumber // ignore: cast_nullable_to_non_nullable
+              as String,
+      clientEmail: clientEmail == freezed
+          ? _value.clientEmail
+          : clientEmail // ignore: cast_nullable_to_non_nullable
+              as String,
       name: name == freezed
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
-              as String,
-      phoneNumber: phoneNumber == freezed
-          ? _value.phoneNumber
-          : phoneNumber // ignore: cast_nullable_to_non_nullable
-              as String,
-      emailAddress: emailAddress == freezed
-          ? _value.emailAddress
-          : emailAddress // ignore: cast_nullable_to_non_nullable
-              as String,
-      projectName: projectName == freezed
-          ? _value.projectName
-          : projectName // ignore: cast_nullable_to_non_nullable
               as String,
       balance: balance == freezed
           ? _value.balance
           : balance // ignore: cast_nullable_to_non_nullable
               as Balance,
-      projectDetail: projectDetail == freezed
-          ? _value.projectDetail
-          : projectDetail // ignore: cast_nullable_to_non_nullable
+      detail: detail == freezed
+          ? _value.detail
+          : detail // ignore: cast_nullable_to_non_nullable
               as String,
     ));
   }
@@ -115,12 +125,12 @@ abstract class _$ProjectCopyWith<$Res> implements $ProjectCopyWith<$Res> {
       __$ProjectCopyWithImpl<$Res>;
   @override
   $Res call(
-      {String name,
-      String phoneNumber,
-      String emailAddress,
-      String projectName,
-      Balance balance,
-      String projectDetail});
+      {String clientName,
+      String clientPhoneNumber,
+      String clientEmail,
+      String name,
+      @BalanceConverter() Balance balance,
+      String detail});
 }
 
 /// @nodoc
@@ -134,133 +144,144 @@ class __$ProjectCopyWithImpl<$Res> extends _$ProjectCopyWithImpl<$Res>
 
   @override
   $Res call({
+    Object? clientName = freezed,
+    Object? clientPhoneNumber = freezed,
+    Object? clientEmail = freezed,
     Object? name = freezed,
-    Object? phoneNumber = freezed,
-    Object? emailAddress = freezed,
-    Object? projectName = freezed,
     Object? balance = freezed,
-    Object? projectDetail = freezed,
+    Object? detail = freezed,
   }) {
     return _then(_Project(
+      clientName: clientName == freezed
+          ? _value.clientName
+          : clientName // ignore: cast_nullable_to_non_nullable
+              as String,
+      clientPhoneNumber: clientPhoneNumber == freezed
+          ? _value.clientPhoneNumber
+          : clientPhoneNumber // ignore: cast_nullable_to_non_nullable
+              as String,
+      clientEmail: clientEmail == freezed
+          ? _value.clientEmail
+          : clientEmail // ignore: cast_nullable_to_non_nullable
+              as String,
       name: name == freezed
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
-              as String,
-      phoneNumber: phoneNumber == freezed
-          ? _value.phoneNumber
-          : phoneNumber // ignore: cast_nullable_to_non_nullable
-              as String,
-      emailAddress: emailAddress == freezed
-          ? _value.emailAddress
-          : emailAddress // ignore: cast_nullable_to_non_nullable
-              as String,
-      projectName: projectName == freezed
-          ? _value.projectName
-          : projectName // ignore: cast_nullable_to_non_nullable
               as String,
       balance: balance == freezed
           ? _value.balance
           : balance // ignore: cast_nullable_to_non_nullable
               as Balance,
-      projectDetail: projectDetail == freezed
-          ? _value.projectDetail
-          : projectDetail // ignore: cast_nullable_to_non_nullable
+      detail: detail == freezed
+          ? _value.detail
+          : detail // ignore: cast_nullable_to_non_nullable
               as String,
     ));
   }
 }
 
 /// @nodoc
-
+@JsonSerializable()
 class _$_Project extends _Project {
   const _$_Project(
-      {required this.name,
-      required this.phoneNumber,
-      required this.emailAddress,
-      required this.projectName,
-      required this.balance,
-      required this.projectDetail})
+      {required this.clientName,
+      required this.clientPhoneNumber,
+      required this.clientEmail,
+      required this.name,
+      @BalanceConverter() required this.balance,
+      required this.detail})
       : super._();
 
+  factory _$_Project.fromJson(Map<String, dynamic> json) =>
+      _$_$_ProjectFromJson(json);
+
+  @override
+  final String clientName;
+  @override
+  final String clientPhoneNumber;
+  @override
+  final String clientEmail;
   @override
   final String name;
   @override
-  final String phoneNumber;
-  @override
-  final String emailAddress;
-  @override
-  final String projectName;
-  @override
+  @BalanceConverter()
   final Balance balance;
   @override
-  final String projectDetail;
+  final String detail;
 
   @override
   String toString() {
-    return 'Project(name: $name, phoneNumber: $phoneNumber, emailAddress: $emailAddress, projectName: $projectName, balance: $balance, projectDetail: $projectDetail)';
+    return 'Project(clientName: $clientName, clientPhoneNumber: $clientPhoneNumber, clientEmail: $clientEmail, name: $name, balance: $balance, detail: $detail)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _Project &&
+            (identical(other.clientName, clientName) ||
+                const DeepCollectionEquality()
+                    .equals(other.clientName, clientName)) &&
+            (identical(other.clientPhoneNumber, clientPhoneNumber) ||
+                const DeepCollectionEquality()
+                    .equals(other.clientPhoneNumber, clientPhoneNumber)) &&
+            (identical(other.clientEmail, clientEmail) ||
+                const DeepCollectionEquality()
+                    .equals(other.clientEmail, clientEmail)) &&
             (identical(other.name, name) ||
                 const DeepCollectionEquality().equals(other.name, name)) &&
-            (identical(other.phoneNumber, phoneNumber) ||
-                const DeepCollectionEquality()
-                    .equals(other.phoneNumber, phoneNumber)) &&
-            (identical(other.emailAddress, emailAddress) ||
-                const DeepCollectionEquality()
-                    .equals(other.emailAddress, emailAddress)) &&
-            (identical(other.projectName, projectName) ||
-                const DeepCollectionEquality()
-                    .equals(other.projectName, projectName)) &&
             (identical(other.balance, balance) ||
                 const DeepCollectionEquality()
                     .equals(other.balance, balance)) &&
-            (identical(other.projectDetail, projectDetail) ||
-                const DeepCollectionEquality()
-                    .equals(other.projectDetail, projectDetail)));
+            (identical(other.detail, detail) ||
+                const DeepCollectionEquality().equals(other.detail, detail)));
   }
 
   @override
   int get hashCode =>
       runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(clientName) ^
+      const DeepCollectionEquality().hash(clientPhoneNumber) ^
+      const DeepCollectionEquality().hash(clientEmail) ^
       const DeepCollectionEquality().hash(name) ^
-      const DeepCollectionEquality().hash(phoneNumber) ^
-      const DeepCollectionEquality().hash(emailAddress) ^
-      const DeepCollectionEquality().hash(projectName) ^
       const DeepCollectionEquality().hash(balance) ^
-      const DeepCollectionEquality().hash(projectDetail);
+      const DeepCollectionEquality().hash(detail);
 
   @JsonKey(ignore: true)
   @override
   _$ProjectCopyWith<_Project> get copyWith =>
       __$ProjectCopyWithImpl<_Project>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$_$_ProjectToJson(this);
+  }
 }
 
 abstract class _Project extends Project {
   const factory _Project(
-      {required String name,
-      required String phoneNumber,
-      required String emailAddress,
-      required String projectName,
-      required Balance balance,
-      required String projectDetail}) = _$_Project;
+      {required String clientName,
+      required String clientPhoneNumber,
+      required String clientEmail,
+      required String name,
+      @BalanceConverter() required Balance balance,
+      required String detail}) = _$_Project;
   const _Project._() : super._();
 
+  factory _Project.fromJson(Map<String, dynamic> json) = _$_Project.fromJson;
+
+  @override
+  String get clientName => throw _privateConstructorUsedError;
+  @override
+  String get clientPhoneNumber => throw _privateConstructorUsedError;
+  @override
+  String get clientEmail => throw _privateConstructorUsedError;
   @override
   String get name => throw _privateConstructorUsedError;
   @override
-  String get phoneNumber => throw _privateConstructorUsedError;
-  @override
-  String get emailAddress => throw _privateConstructorUsedError;
-  @override
-  String get projectName => throw _privateConstructorUsedError;
-  @override
+  @BalanceConverter()
   Balance get balance => throw _privateConstructorUsedError;
   @override
-  String get projectDetail => throw _privateConstructorUsedError;
+  String get detail => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$ProjectCopyWith<_Project> get copyWith =>

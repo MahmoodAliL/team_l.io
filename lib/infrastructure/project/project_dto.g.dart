@@ -8,21 +8,25 @@ part of 'project_dto.dart';
 
 _$_ProjectDto _$_$_ProjectDtoFromJson(Map<String, dynamic> json) {
   return _$_ProjectDto(
+    clientName: json['clientName'] as String,
+    clinetPhoneNumber: json['clinetPhoneNumber'] as String,
+    clientEmail: json['clientEmail'] as String,
     name: json['name'] as String,
-    phoneNumber: json['phoneNumber'] as String,
-    emailAddress: json['emailAddress'] as String,
-    projectName: json['projectName'] as String,
     balance: json['balance'] as int,
-    projectDetail: json['projectDetail'] as String,
+    detail: json['detail'] as String,
+    serverTimestamp: const ServerTimestampConverter()
+        .fromJson(json['serverTimestamp'] as Object),
   );
 }
 
 Map<String, dynamic> _$_$_ProjectDtoToJson(_$_ProjectDto instance) =>
     <String, dynamic>{
+      'clientName': instance.clientName,
+      'clinetPhoneNumber': instance.clinetPhoneNumber,
+      'clientEmail': instance.clientEmail,
       'name': instance.name,
-      'phoneNumber': instance.phoneNumber,
-      'emailAddress': instance.emailAddress,
-      'projectName': instance.projectName,
       'balance': instance.balance,
-      'projectDetail': instance.projectDetail,
+      'detail': instance.detail,
+      'serverTimestamp':
+          const ServerTimestampConverter().toJson(instance.serverTimestamp),
     };

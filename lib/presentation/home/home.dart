@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:teaml/presentation/home/project_form/project_form.dart';
+import 'package:teaml/presentation/home/project_form/project_form_section.dart';
 import 'package:teaml/presentation/home/widgets/footer.dart';
 import 'package:teaml/presentation/home/widgets/header.dart';
 
@@ -12,7 +12,7 @@ class HomePage extends StatelessWidget {
       body: ListView(
         children: const [
           //HeaderWidget(),
-          ProjectFormWidget(),
+          ProjectFormSection(),
          // FooterWidget(),
         ],
       ),

@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/foundation.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:teaml/domain/projects/project.dart';
@@ -9,36 +10,49 @@ part 'project_dto.g.dart';
 @freezed
 abstract class ProjectDto implements _$ProjectDto {
   const ProjectDto._();
-  
+
   factory ProjectDto.fromJson(Map<String, dynamic> json) =>
       _$ProjectDtoFromJson(json);
 
   const factory ProjectDto({
+    required String clientName,
+    required String clinetPhoneNumber,
+    required String clientEmail,
     required String name,
-    required String phoneNumber,
-    required String emailAddress,
-    required String projectName,
     required int balance,
-    required String projectDetail,
+    required String detail,
+    @ServerTimestampConverter() required FieldValue serverTimestamp,
   }) = _ProjectDto;
 
   factory ProjectDto.fromDomain(Project project) {
     return ProjectDto(
-        name: project.name,
-        phoneNumber: project.phoneNumber,
-        emailAddress: project.emailAddress,
-        projectName: project.projectName,
-        balance: project.balance.balanceValueIndex,
-        projectDetail: project.projectDetail);
+      clientName: project.clientName,
+      clinetPhoneNumber: project.clientPhoneNumber,
+      clientEmail: project.clientEmail,
+      name: project.name,
+      balance: project.balance.balanceValueIndex,
+      detail: project.detail,
+      serverTimestamp: FieldValue.serverTimestamp(),
+    );
   }
 
   Project toDomain() {
     return Project(
+        clientName: clientName,
+        clientPhoneNumber: clinetPhoneNumber,
+        clientEmail: clientEmail,
         name: name,
-        phoneNumber: phoneNumber,
-        emailAddress: emailAddress,
-        projectName: projectName,
         balance: Balance(selectedValueIndex: balance),
-        projectDetail: projectDetail);
+        detail: detail);
   }
+}
+
+class ServerTimestampConverter implements JsonConverter<FieldValue, Object> {
+  const ServerTimestampConverter();
+
+  @override
+  FieldValue fromJson(Object json) => FieldValue.serverTimestamp();
+
+  @override
+  Object toJson(FieldValue fieldValue) => fieldValue;
 }
