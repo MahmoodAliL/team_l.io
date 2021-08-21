@@ -11,9 +11,9 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       body: ListView(
         children: const [
-          //HeaderWidget(),
-          ProjectFormSection(),
-         // FooterWidget(),
+          HeaderWidget(),
+          ProjectFormWidget(),
+          FooterWidget(),
         ],
       ),
     );

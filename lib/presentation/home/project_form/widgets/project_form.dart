@@ -20,7 +20,7 @@ class ProjectFormWidget extends StatelessWidget {
     return BlocConsumer<ProjectFormCubit, ProjectFormState>(
       listener: (context, state) {
         state.failureOrSuccess.fold(
-          () => {},
+          () => () {},
           (s) => s.fold(
             (f) => f.map(
               unexpected: (v) {
@@ -55,24 +55,15 @@ class ProjectFormWidget extends StatelessWidget {
               verticalSpace,
               const ProjectFieldsWidget(),
               verticalSpace,
-              state.isSubmitting
-                  ? const CircularProgressIndicator()
-                  : SubmitButton(
-                      title: 'ارسال',
-                      onPress: () {
-                        final currentState = _formKey.currentState;
-                        if (currentState != null && currentState.validate()) {
-                          currentState.save();
-                          final fields = currentState.value;
-                          debugPrint(fields.toString());
-                          final project = Project.fromJson(fields);
-                          debugPrint(project.toString());
-                          context
-                              .read<ProjectFormCubit>()
-                              .projectFormSubmitted(project);
-                        }
-                      },
-                    ),
+              if (state.isSubmitting)
+                const CircularProgressIndicator()
+              else
+                SubmitButton(
+                  title: 'ارسال',
+                  onPress: () {
+                    onSubmit(context);
+                  },
+                ),
               verticalSpace,
             ],
           ),
@@ -81,13 +72,24 @@ class ProjectFormWidget extends StatelessWidget {
     );
   }
 
+  void onSubmit(BuildContext context) {
+    final currentState = _formKey.currentState;
+    if (currentState != null && currentState.validate()) {
+      currentState.save();
+      final fields = currentState.value;
+      final project = Project.fromJson(fields);
+      debugPrint(project.toString());
+      context.read<ProjectFormCubit>().projectFormSubmitted(project);
+    }
+  }
+
   void _showAlertDialogMessage(
     BuildContext context, {
     required String title,
     required String description,
     required AlertState failureOrSuccess,
   }) {
-    showDialog(
+    showDialog<void>(
         context: context,
         builder: (context) {
           return AlertDialogMessage(

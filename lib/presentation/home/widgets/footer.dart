@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:teaml/constant.dart';
+import 'package:teaml/presentation/core/constants.dart';
 import 'package:teaml/presentation/core/follow_as_widget.dart';
 
 class FooterWidget extends StatelessWidget {
@@ -8,14 +8,14 @@ class FooterWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Theme.of(context).primaryColor,
+      color: Theme.of(context).colorScheme.primary,
       child: Padding(
         padding: const EdgeInsets.symmetric(vertical: 32, horizontal: 64),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Padding(
-              padding: const EdgeInsets.only(top: 16.0, bottom: 32.0),
+              padding: const EdgeInsets.only(top: 16, bottom: 32),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -26,34 +26,35 @@ class FooterWidget extends StatelessWidget {
                         'البريد الالكتروني',
                         textAlign: TextAlign.end,
                         style: TextStyle(
-                            fontSize: 16.0,
-                            color: Theme.of(context).accentColor),
+                            fontSize: 16,
+                            color: Theme.of(context).colorScheme.secondary),
                       ),
                       const SizedBox(
-                        height: 8.0,
+                        height: 8,
                       ),
                       const Text(
                         kTeamLEmail,
                         textAlign: TextAlign.end,
-                        style: TextStyle(fontSize: 16.0, color: Colors.white),
+                        style: TextStyle(fontSize: 16, color: Colors.white),
                       ),
                       const SizedBox(
-                        height: 16.0,
+                        height: 16,
                       ),
                       Text(
                         'رقم الهاتف',
                         textAlign: TextAlign.end,
                         style: TextStyle(
-                            fontSize: 16.0,
-                            color: Theme.of(context).accentColor),
+                          fontSize: 16,
+                          color: Theme.of(context).colorScheme.secondary,
+                        ),
                       ),
                       const SizedBox(
-                        height: 8.0,
+                        height: 8,
                       ),
                       const Text(
                         '077044532454320',
                         textAlign: TextAlign.end,
-                        style: TextStyle(fontSize: 16.0, color: Colors.white),
+                        style: TextStyle(fontSize: 16, color: Colors.white),
                       ),
                     ],
                   ),
@@ -64,19 +65,20 @@ class FooterWidget extends StatelessWidget {
                         'Team - L',
                         textAlign: TextAlign.end,
                         style: TextStyle(
-                            fontSize: 36.0,
-                            color: Theme.of(context).accentColor),
+                          fontSize: 36,
+                          color: Theme.of(context).colorScheme.secondary,
+                        ),
                       ),
                       const SizedBox(
-                        height: 8.0,
+                        height: 8,
                       ),
-                      Container(
+                      const SizedBox(
                         width: 300,
-                        child: const Text(
+                        child: Text(
                           'فريق متخصص في مجال تصميم تطبيقات الاندرويد طبقا لعملائك وطبيعة منتجاتك وبخبرة كبيرة تمتد لسنوات عديدة',
                           maxLines: 3,
                           textAlign: TextAlign.end,
-                          style: TextStyle(fontSize: 16.0, color: Colors.white),
+                          style: TextStyle(fontSize: 16, color: Colors.white),
                         ),
                       )
                     ],
@@ -86,13 +88,13 @@ class FooterWidget extends StatelessWidget {
             ),
             const Divider(color: Colors.white),
             const Padding(
-              padding: const EdgeInsets.all(8.0),
+              padding:  EdgeInsets.all(8),
               child: Text(
                 'جميع الحقوق محفوظة © 2021',
-                style: TextStyle(fontSize: 16.0, color: Colors.white),
+                style: TextStyle(fontSize: 16, color: Colors.white),
               ),
             ),
-            FollowAsWidget(),
+            const FollowAsWidget(),
           ],
         ),
       ),

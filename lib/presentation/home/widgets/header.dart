@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:teaml/constant.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:teaml/presentation/core/constants.dart';
 import 'package:teaml/presentation/core/follow_as_widget.dart';
 
 class HeaderWidget extends StatelessWidget {
@@ -11,7 +10,7 @@ class HeaderWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Theme.of(context).primaryColor,
+      color: Theme.of(context).colorScheme.primary,
       child: Padding(
         padding: const EdgeInsets.symmetric(vertical: 32, horizontal: 64),
         child: Column(
@@ -27,13 +26,13 @@ class HeaderWidget extends StatelessWidget {
                   children: [
                     const Text(
                       kTeamLEmail,
-                      style: TextStyle(color: Colors.white, fontSize: 12.0),
+                      style: TextStyle(color: Colors.white, fontSize: 12),
                     ),
                     IconButton(
                       onPressed: () {},
                       icon: const Icon(
                         Icons.email_outlined,
-                        size: 16.0,
+                        size: 16,
                         color: Colors.white,
                       ),
                     ),
@@ -42,26 +41,31 @@ class HeaderWidget extends StatelessWidget {
               ],
             ),
             const SizedBox(
-              height: 32.0,
+              height: 32,
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text('L',
-                    textAlign: TextAlign.start,
-                    style: TextStyle(
-                        color: Theme.of(context).accentColor, fontSize: 70.sp)),
+                Text(
+                  'L',
+                  textAlign: TextAlign.start,
+                  style: TextStyle(
+                      color: Theme.of(context).colorScheme.secondary,
+                      fontSize: 70.sp),
+                ),
                 Text(
                   'Team - L',
                   textAlign: TextAlign.end,
                   style: TextStyle(
-                      fontSize: 36.0, color: Theme.of(context).accentColor),
+                    fontSize: 36,
+                    color: Theme.of(context).colorScheme.secondary,
+                  ),
                 ),
               ],
             ),
             const Divider(color: Colors.white),
             const SizedBox(
-              height: 32.0,
+              height: 32,
             ),
             Text(
               'اطلب مشروعك',
@@ -70,7 +74,7 @@ class HeaderWidget extends StatelessWidget {
                   textStyle: TextStyle(color: Colors.white, fontSize: 32.sp)),
             ),
             const SizedBox(
-              height: 16.0,
+              height: 16,
             ),
             Text(
               'لديك فكرة وتحتاج لتنفيذها ؟ أرسلها لنا',

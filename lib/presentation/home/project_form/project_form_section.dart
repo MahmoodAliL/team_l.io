@@ -5,8 +5,8 @@ import 'package:teaml/injectable.dart';
 import 'package:teaml/presentation/core/constants.dart';
 import 'package:teaml/presentation/home/project_form/widgets/project_form.dart';
 
-class ProjectFormSection extends StatelessWidget {
-  const ProjectFormSection({Key? key}) : super(key: key);
+class ProjectFormWidget extends StatelessWidget {
+  const ProjectFormWidget({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -14,6 +14,7 @@ class ProjectFormSection extends StatelessWidget {
       create: (context) => getIt<ProjectFormCubit>(),
       child: Column(
         children: [
+          const SizedBox(height: defaultPadding * 2),
           _buildTitle(context),
           const SizedBox(height: defaultPadding / 2),
           _buildDesciption(context),
