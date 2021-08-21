@@ -5,8 +5,8 @@ import 'package:teaml/injectable.dart';
 import 'package:teaml/presentation/core/constants.dart';
 import 'package:teaml/presentation/home/project_form/widgets/project_form.dart';
 
-class ProjectFormWidget extends StatelessWidget {
-  const ProjectFormWidget({Key? key}) : super(key: key);
+class ProjectFormSection extends StatelessWidget {
+  const ProjectFormSection({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

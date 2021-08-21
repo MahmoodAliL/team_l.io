@@ -12,7 +12,7 @@ class HomePage extends StatelessWidget {
       body: ListView(
         children: const [
           HeaderWidget(),
-          ProjectFormWidget(),
+          ProjectFormSection(),
           FooterWidget(),
         ],
       ),

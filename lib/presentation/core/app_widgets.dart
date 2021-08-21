@@ -17,7 +17,6 @@ class AppWidget extends StatelessWidget {
           GlobalMaterialLocalizations.delegate,
           GlobalWidgetsLocalizations.delegate,
           GlobalCupertinoLocalizations.delegate,
-          //PhoneFieldLocalization.delegate,
           FormBuilderLocalizations.delegate,
         ],
         supportedLocales: const [

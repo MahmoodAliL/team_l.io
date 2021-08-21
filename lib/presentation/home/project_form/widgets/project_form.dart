@@ -4,7 +4,7 @@ import 'package:flutter_form_builder/flutter_form_builder.dart';
 import 'package:teaml/application/project/project_form/project_form_cubit.dart';
 import 'package:teaml/domain/projects/project.dart';
 import 'package:teaml/presentation/core/constants.dart';
-import 'package:teaml/presentation/home/project_form/widgets/alert_message.dart';
+import 'package:teaml/presentation/core/alert_message.dart';
 import 'package:teaml/presentation/home/project_form/widgets/fields/contact_fields_widget.dart';
 import 'package:teaml/presentation/home/project_form/widgets/fields/project_fields_widget.dart';
 import 'package:teaml/presentation/home/project_form/widgets/submit_button.dart';
