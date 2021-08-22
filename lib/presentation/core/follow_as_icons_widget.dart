@@ -2,28 +2,34 @@ import 'dart:html' as html;
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:teaml/presentation/core/constants.dart';
+import 'constants.dart';
 
-class FollowAsWidget extends StatelessWidget {
-  const FollowAsWidget({Key? key}) : super(key: key);
+
+class FollowAsIconsWidget extends StatelessWidget {
+  const FollowAsIconsWidget({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        _buildIconButton(FontAwesomeIcons.instagram, () {}),
-        _buildIconButton(FontAwesomeIcons.googlePlay, () {
+        buildIconButton(FontAwesomeIcons.instagram, () {
+
+        }),
+        buildIconButton(FontAwesomeIcons.googlePlay, () {
           html.window.open(kGooglePlay, 'google play');
         }),
-        _buildIconButton(FontAwesomeIcons.telegramPlane, () {}),
-        _buildIconButton(FontAwesomeIcons.facebook, () {
+        buildIconButton(FontAwesomeIcons.telegramPlane, () {
+
+        }),
+        buildIconButton(FontAwesomeIcons.facebook, () {
           html.window.open(kFacebookPage, 'facebook');
         }),
       ],
     );
   }
 
-  Widget _buildIconButton(IconData icon, VoidCallback onPress) {
+  Widget buildIconButton(IconData icon, VoidCallback onPress) {
     return IconButton(
       onPressed: onPress,
       icon: FaIcon(

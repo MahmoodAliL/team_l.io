@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:teaml/presentation/core/constants.dart';
-import 'package:teaml/presentation/core/follow_as_widget.dart';
+import 'package:teaml/presentation/core/follow_as_icons_widget.dart';
 
 class FooterWidget extends StatelessWidget {
   const FooterWidget({Key? key}) : super(key: key);
@@ -12,7 +12,6 @@ class FooterWidget extends StatelessWidget {
       child: Padding(
         padding: const EdgeInsets.symmetric(vertical: 32, horizontal: 64),
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Padding(
               padding: const EdgeInsets.only(top: 16, bottom: 32),
@@ -73,8 +72,11 @@ class FooterWidget extends StatelessWidget {
                         height: 8,
                       ),
                       const SizedBox(
-                        width: 300,
-                        child: Text(
+                        height: 8.0,
+                      ),
+                      Container(
+                        width: 350,
+                        child: const Text(
                           'فريق متخصص في مجال تصميم تطبيقات الاندرويد طبقا لعملائك وطبيعة منتجاتك وبخبرة كبيرة تمتد لسنوات عديدة',
                           maxLines: 3,
                           textAlign: TextAlign.end,
@@ -94,7 +96,7 @@ class FooterWidget extends StatelessWidget {
                 style: TextStyle(fontSize: 16, color: Colors.white),
               ),
             ),
-            const FollowAsWidget(),
+            const FollowAsIconsWidget(),
           ],
         ),
       ),
