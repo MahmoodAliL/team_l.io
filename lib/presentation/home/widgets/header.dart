@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:teaml/presentation/core/constants.dart';
-import 'package:teaml/presentation/core/follow_as_icons_widget.dart';
 import 'package:teaml/presentation/core/responsive.dart';
+import 'package:teaml/presentation/home/widgets/header_top_section.dart';
 
 class HeaderWidget extends StatelessWidget {
   const HeaderWidget({Key? key}) : super(key: key);
@@ -12,15 +12,15 @@ class HeaderWidget extends StatelessWidget {
     return Container(
       color: Theme.of(context).colorScheme.primary,
       child: Padding(
-        padding: const EdgeInsets.symmetric(vertical: 32, horizontal: 64),
+        padding: const EdgeInsets.symmetric(vertical: 48, horizontal: 64),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            _buildTopSection(context),
+            const HeaderTopSection(),
             const SizedBox(height: 32),
             _buildPageHeaderName(context),
-            const SizedBox(height: 32),
+            const SizedBox(height: defaultPadding),
             _buildTitle(context),
             const SizedBox(height: defaultPadding),
             _buildSubTitle(context),
@@ -30,38 +30,16 @@ class HeaderWidget extends StatelessWidget {
     );
   }
 
-  Widget _buildTopSection(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: [
-        Row(
-          children: [
-            const Text(
-              kTeamLEmail,
-              style: TextStyle(color: Colors.white, fontSize: 12),
-            ),
-            IconButton(
-              onPressed: () {},
-              icon: const Icon(
-                Icons.email_outlined,
-                size: 16,
-                color: Colors.green,
-              ),
-            ),
-          ],
-        ),
-        const FollowAsIconsWidget(),
-      ],
-    );
-  }
-
   Widget _buildPageHeaderName(BuildContext context) {
     return Text('Te-L-am',
         textAlign: TextAlign.center,
-        style: Theme.of(context)
-            .textTheme
-            .headline2
-            ?.copyWith(color: Theme.of(context).colorScheme.secondary));
+        style: Responsive.isMobile(context)
+            ? Theme.of(context).textTheme.headline3?.copyWith(
+                  color: Theme.of(context).colorScheme.secondary,
+                )
+            : Theme.of(context).textTheme.headline2?.copyWith(
+                  color: Theme.of(context).colorScheme.secondary,
+                ));
   }
 
   Widget _buildTitle(BuildContext context) {
@@ -69,9 +47,13 @@ class HeaderWidget extends StatelessWidget {
       'اطلب مشروعك',
       textAlign: TextAlign.center,
       style: GoogleFonts.roboto(
-        textStyle: Theme.of(context).textTheme.headline3?.copyWith(
-              color: Colors.white,
-            ),
+        textStyle: Responsive.isMobile(context)
+            ? Theme.of(context).textTheme.headline4?.copyWith(
+                  color: Colors.white,
+                )
+            : Theme.of(context).textTheme.headline3?.copyWith(
+                  color: Colors.white,
+                ),
       ),
     );
   }
@@ -80,10 +62,16 @@ class HeaderWidget extends StatelessWidget {
     return Text(
       'لديك فكرة وتحتاج لتنفيذها ؟ أرسلها لنا',
       textAlign: TextAlign.center,
+      overflow: TextOverflow.ellipsis,
+      maxLines: 2,
       style: GoogleFonts.roboto(
-        textStyle: Theme.of(context).textTheme.headline4?.copyWith(
-              color: Colors.white,
-            ),
+        textStyle: Responsive.isMobile(context)
+            ? Theme.of(context).textTheme.headline5?.copyWith(
+                  color: Colors.white,
+                )
+            : Theme.of(context).textTheme.headline4?.copyWith(
+                  color: Colors.white,
+                ),
       ),
     );
   }
