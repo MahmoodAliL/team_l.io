@@ -9,12 +9,15 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: ListView(
-        children: const [
-          HeaderWidget(),
-          ProjectFormSection(),
-          FooterWidget(),
-        ],
+      body: Scrollbar(
+        showTrackOnHover: true,
+        child: ListView(
+          children: const [
+            HeaderWidget(),
+            ProjectFormSection(),
+            FooterWidget(),
+          ],
+        ),
       ),
     );
   }

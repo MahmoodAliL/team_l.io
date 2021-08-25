@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:teaml/presentation/core/constants.dart';
 import 'package:teaml/presentation/core/follow_as_icons_widget.dart';
+import 'package:teaml/presentation/core/responsive.dart';
 
 class HeaderWidget extends StatelessWidget {
   const HeaderWidget({Key? key}) : super(key: key);
@@ -17,11 +18,11 @@ class HeaderWidget extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             _buildTopSection(context),
-            const SizedBox(height: 48),
+            const SizedBox(height: 32),
             _buildPageHeaderName(context),
             const SizedBox(height: 32),
             _buildTitle(context),
-            const SizedBox(height: 16),
+            const SizedBox(height: defaultPadding),
             _buildSubTitle(context),
           ],
         ),
