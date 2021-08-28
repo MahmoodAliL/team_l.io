@@ -7,7 +7,7 @@ class TextFormFieldBuilder extends StatelessWidget {
     required this.name,
     required this.label,
     this.validator,
-    this.maxLines,
+    this.maxLines = 1,
   }) : super(key: key);
   final String name;
   final String label;

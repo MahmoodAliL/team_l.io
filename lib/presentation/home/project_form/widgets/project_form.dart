@@ -3,8 +3,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
 import 'package:teaml/application/project/project_form/project_form_cubit.dart';
 import 'package:teaml/domain/projects/project.dart';
-import 'package:teaml/presentation/core/constants.dart';
 import 'package:teaml/presentation/core/alert_message.dart';
+import 'package:teaml/presentation/core/constants.dart';
 import 'package:teaml/presentation/home/project_form/widgets/fields/contact_fields_widget.dart';
 import 'package:teaml/presentation/home/project_form/widgets/fields/project_fields_widget.dart';
 import 'package:teaml/presentation/home/project_form/widgets/submit_button.dart';
@@ -61,7 +61,14 @@ class ProjectFormWidget extends StatelessWidget {
                 SubmitButton(
                   title: 'ارسال',
                   onPress: () {
-                    onSubmit(context);
+                    _showAlertDialogMessage(
+                  context,
+                  title: 'حدث خطا ما ',
+                  description:
+                      'قد لا يتوفر لديك الاتصال بالانترنت، تاكد من اتصالك بالانترنت، و حاول فيما بعد',
+                  failureOrSuccess: AlertState.failure,
+                );
+                    //onSubmit(context);
                   },
                 ),
               verticalSpace,

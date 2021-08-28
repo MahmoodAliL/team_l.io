@@ -12,18 +12,24 @@ class HeaderWidget extends StatelessWidget {
     return Container(
       color: Theme.of(context).colorScheme.primary,
       child: Padding(
-        padding: const EdgeInsets.symmetric(vertical: 48, horizontal: 64),
+        padding: EdgeInsets.symmetric(
+          vertical: defaultPadding,
+          horizontal: Responsive.isMobile(context)
+              ? defaultPadding
+              : defaultPadding * 4,
+        ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             const HeaderTopSection(),
-            const SizedBox(height: 32),
+            const SizedBox(height: defaultPadding * 2),
             _buildPageHeaderName(context),
             const SizedBox(height: defaultPadding),
             _buildTitle(context),
             const SizedBox(height: defaultPadding),
             _buildSubTitle(context),
+            const SizedBox(height: defaultPadding),
           ],
         ),
       ),
@@ -31,15 +37,17 @@ class HeaderWidget extends StatelessWidget {
   }
 
   Widget _buildPageHeaderName(BuildContext context) {
-    return Text('Te-L-am',
-        textAlign: TextAlign.center,
-        style: Responsive.isMobile(context)
-            ? Theme.of(context).textTheme.headline3?.copyWith(
-                  color: Theme.of(context).colorScheme.secondary,
-                )
-            : Theme.of(context).textTheme.headline2?.copyWith(
-                  color: Theme.of(context).colorScheme.secondary,
-                ));
+    return Text(
+      'Te-L-am',
+      textAlign: TextAlign.center,
+      style: Responsive.isMobile(context)
+          ? Theme.of(context).textTheme.headline3?.copyWith(
+                color: Theme.of(context).colorScheme.secondary,
+              )
+          : Theme.of(context).textTheme.headline2?.copyWith(
+                color: Theme.of(context).colorScheme.secondary,
+              ),
+    );
   }
 
   Widget _buildTitle(BuildContext context) {

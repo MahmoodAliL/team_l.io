@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:teaml/presentation/core/constants.dart';
 import 'package:teaml/presentation/core/follow_as_icons_widget.dart';
 import 'package:teaml/presentation/core/responsive.dart';
@@ -11,33 +12,37 @@ class FooterWidget extends StatelessWidget {
     return Container(
       color: Theme.of(context).colorScheme.primary,
       child: Padding(
-        padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 64),
+        padding: EdgeInsets.symmetric(
+          vertical: defaultPadding,
+          horizontal: Responsive.isMobile(context)
+              ? defaultPadding
+              : defaultPadding * 4,
+        ),
         child: Column(
           children: [
             Padding(
               padding: const EdgeInsets.only(top: 16, bottom: 32),
               child: Responsive.isLargeMobile(context)
                   ? Column(
-                      children: [
+                      children: const [
                         TeamLAbout(),
-                        SizedBox(height: defaultPadding * 2,),
+                        SizedBox(height: defaultPadding * 2),
                         TeamLAccount(),
                       ],
                     )
                   : Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
+                      children: const [
                         TeamLAbout(),
                         TeamLAccount(),
                       ],
                     ),
             ),
             const Divider(color: Colors.white),
-            const SizedBox(
-              height: defaultPadding,
-            ),
+            const SizedBox(height: defaultPadding),
             const Text(
               'جميع الحقوق محفوظة © 2021',
+              textAlign: TextAlign.center,
               style: TextStyle(fontSize: 16, color: Colors.white),
             ),
             const FollowAsIconsWidget(),
@@ -62,18 +67,18 @@ class TeamLAccount extends StatelessWidget {
           'البريد الالكتروني',
           textAlign: TextAlign.end,
           style: TextStyle(
-              fontSize: 16, color: Theme.of(context).colorScheme.secondary),
+            fontSize: 16.sp,
+            color: Theme.of(context).colorScheme.secondary,
+          ),
         ),
-        const SizedBox(
-          height: 8,
-        ),
+        const SizedBox(height: defaultPadding / 2),
         const Text(
           kTeamLEmail,
           textAlign: TextAlign.end,
           style: TextStyle(fontSize: 16, color: Colors.white),
         ),
         const SizedBox(
-          height: defaultPadding,
+          height: defaultPadding
         ),
         Text(
           'رقم الهاتف',
@@ -87,7 +92,8 @@ class TeamLAccount extends StatelessWidget {
           height: 8,
         ),
         const Text(
-          '077044532454320',
+          kPhoneNumber,
+          textDirection: TextDirection.ltr,
           textAlign: TextAlign.end,
           style: TextStyle(fontSize: 16, color: Colors.white),
         ),
@@ -106,20 +112,19 @@ class TeamLAbout extends StatelessWidget {
           ? CrossAxisAlignment.center
           : CrossAxisAlignment.start,
       children: [
-        Text(
-          'Team - L',
-          textAlign: TextAlign.end,
-          style: Theme.of(context).textTheme.headline4?.copyWith(
-            color: secondaryColor
-          )
-        ),
+        Text('Team - L',
+            textAlign: TextAlign.end,
+            style: Theme.of(context)
+                .textTheme
+                .headline4
+                ?.copyWith(color: secondaryColor)),
         const SizedBox(
           height: 8,
         ),
         const SizedBox(
           height: 8,
         ),
-        Container(
+        SizedBox(
           width: Responsive.isLargeMobile(context) ? null : 350,
           child: Text(
             'فريق متخصص في مجال تصميم تطبيقات الاندرويد طبقا لعملائك وطبيعة منتجاتك وبخبرة كبيرة تمتد لسنوات عديدة',

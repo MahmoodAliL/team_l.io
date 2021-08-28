@@ -22,3 +22,4 @@ const kFacebookPage = 'https://www.facebook.com/TeamLDeveloper';
 const kTelegramChannel = '';
 const kGooglePlay =
     'https://play.google.com/store/apps/dev?id=4735642698271386591';
+const kPhoneNumber = '+9647727366378';

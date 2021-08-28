@@ -43,7 +43,7 @@ class ProjectFieldsWidget extends StatelessWidget {
         context,
         errorText: requiredFieldErrorMsg,
       ),
-      decoration: const InputDecoration(labelText: 'الميزانية التقديرية'),
+      decoration: const InputDecoration(labelText: 'الميزانية المشروع'),
       items: List.generate(
         Balance.balanceValues.length,
         (index) => DropdownMenuItem(

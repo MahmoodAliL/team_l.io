@@ -6,7 +6,12 @@ class Balance {
   }
   late int _selectedValueIndex;
 
-  static const balanceValues = ['100 - 400', '400 - 800'];
+  static const balanceValues = [
+    '100 - 500 دولار',
+    '500 - 1000 دولار',
+    '1000 - 2000 دولار',
+    '2000 - 5000 دولار',
+  ];
 
   String get value => balanceValues[_selectedValueIndex];
 

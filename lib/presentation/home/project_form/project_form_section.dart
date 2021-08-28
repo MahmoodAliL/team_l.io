@@ -28,6 +28,7 @@ class ProjectFormSection extends StatelessWidget {
   Widget _buildTitle(BuildContext context) {
     return Text(
       'تقديم الطلب',
+      textAlign: TextAlign.center,
       style: Theme.of(context).textTheme.headline5?.copyWith(
             fontWeight: FontWeight.bold,
             color: Colors.black,
@@ -38,6 +39,7 @@ class ProjectFormSection extends StatelessWidget {
   Widget _buildDesciption(BuildContext context) {
     return Text(
       'نعمل على تحويل أفكارك الرائعة إلى حقيقة',
+      textAlign: TextAlign.center,
       style: Theme.of(context).textTheme.subtitle1,
     );
   }

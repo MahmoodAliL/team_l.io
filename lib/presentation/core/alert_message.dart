@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:teaml/presentation/core/constants.dart';
+import 'package:teaml/presentation/core/responsive.dart';
 
 enum AlertState { success, failure }
 
@@ -18,9 +19,13 @@ class AlertDialogMessage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AlertDialog(
-      contentPadding: const EdgeInsets.symmetric(
-        horizontal: defaultPadding * 4,
-        vertical: defaultPadding * 2,
+      contentPadding: EdgeInsets.symmetric(
+        horizontal: Responsive.isLargeMobile(context)
+            ? defaultPadding * 1.5
+            : defaultPadding * 4,
+        vertical: Responsive.isLargeMobile(context)
+            ? defaultPadding
+            : defaultPadding * 2,
       ),
       content: Column(
         mainAxisSize: MainAxisSize.min,
@@ -32,7 +37,7 @@ class AlertDialogMessage extends StatelessWidget {
             style: Theme.of(context).textTheme.headline6,
           ),
           const SizedBox(height: defaultPadding * 0.5),
-          Text(description),
+          Text(description, textAlign: TextAlign.center),
           const SizedBox(height: defaultPadding * 2),
           const _AlertOkButton(),
         ],
@@ -51,8 +56,10 @@ class _AlertOkButton extends StatelessWidget {
     return ElevatedButton(
       style: ElevatedButton.styleFrom(
         primary: Colors.blue,
-        padding: const EdgeInsets.symmetric(
-          horizontal: defaultPadding * 4,
+        padding: EdgeInsets.symmetric(
+          horizontal: Responsive.isMobile(context)
+              ? defaultPadding * 2
+              : defaultPadding * 4,
           vertical: defaultPadding,
         ),
       ),
