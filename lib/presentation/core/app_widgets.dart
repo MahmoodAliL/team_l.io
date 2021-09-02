@@ -11,7 +11,9 @@ class AppWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ScreenUtilInit(
+      designSize: const Size(1366, 766),
       builder: () => MaterialApp(
+        
         title: 'Te-L-am',
         localizationsDelegates: const [
           GlobalMaterialLocalizations.delegate,
@@ -24,6 +26,8 @@ class AppWidget extends StatelessWidget {
         ],
         home: const HomePage(),
         theme: ThemeData.light().copyWith(
+          primaryColor: statusBarColor,
+          textTheme: _buildTextTheme(Theme.of(context).textTheme),
           colorScheme: const ColorScheme.light(
             primary: primaryColor,
             secondary: secondaryColor,
@@ -48,6 +52,24 @@ class AppWidget extends StatelessWidget {
           ),
         ),
       ),
+    );
+  }
+
+  TextTheme _buildTextTheme(TextTheme textTheme) {
+    return textTheme.copyWith(
+      /* button: textTheme.button?.copyWith(height: 3),
+      overline: textTheme.overline?.copyWith(height: 3),
+      headline1: textTheme.headline1?.copyWith(height: 3),
+      headline2: textTheme.headline2?.copyWith(height: 3),
+      headline3: textTheme.headline3?.copyWith(height: 3),
+      headline4: textTheme.headline4?.copyWith(height: 3),
+      headline5: textTheme.headline5?.copyWith(height: 3),
+      headline6: textTheme.headline6?.copyWith(height: 3),
+      subtitle1: textTheme.subtitle1?.copyWith(height: 3),
+      subtitle2: textTheme.subtitle2?.copyWith(height: 3),
+      bodyText1: textTheme.bodyText1?.copyWith(height: 3),
+      bodyText2: textTheme.bodyText2?.copyWith(height: 3),
+      caption: textTheme.caption?.copyWith(height: 3), */
     );
   }
 }

@@ -3,6 +3,7 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 
 //* Colors
+const statusBarColor = Color(0xFF061C27);
 const primaryColor = Color(0xFF093145);
 const secondaryColor = Color(0xFFFBC347);
 const onPrimaryColor = Colors.white;
@@ -17,9 +18,9 @@ const maxPageWidth = 1280.0;
 const requiredFieldErrorMsg = 'هذا الحقل مطلوب';
 
 //* Links
-const kTeamLEmail = 'teaml100teaml@gmail.com';
+const kTeamLEmail = 'teamlteaml100@gmail.com';
 const kFacebookPage = 'https://www.facebook.com/TeamLDeveloper';
-const kTelegramChannel = '';
+const kTelegramChannel = 'https://t.me/team_l_developers';
 const kGooglePlay =
     'https://play.google.com/store/apps/dev?id=4735642698271386591';
 const kPhoneNumber = '+9647727366378';

@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:teaml/application/project/project_form/project_form_cubit.dart';
 import 'package:teaml/injectable.dart';
 import 'package:teaml/presentation/core/constants.dart';
-import 'package:teaml/presentation/home/project_form/widgets/project_form.dart';
+import 'package:teaml/presentation/home/components/project_form/project_form.dart';
 
 class ProjectFormSection extends StatelessWidget {
   const ProjectFormSection({Key? key}) : super(key: key);

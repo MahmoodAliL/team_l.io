@@ -1,60 +1,56 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:teaml/presentation/core/components/our_accounts_links.dart';
 import 'package:teaml/presentation/core/constants.dart';
-import 'package:teaml/presentation/core/follow_as_icons_widget.dart';
 import 'package:teaml/presentation/core/responsive.dart';
 
-class FooterWidget extends StatelessWidget {
-  const FooterWidget({Key? key}) : super(key: key);
+class FooterSection extends StatelessWidget {
+  const FooterSection({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Container(
+      padding: EdgeInsets.symmetric(
+        vertical: defaultPadding,
+        horizontal:
+            Responsive.isMobile(context) ? defaultPadding : defaultPadding * 4,
+      ),
       color: Theme.of(context).colorScheme.primary,
-      child: Padding(
-        padding: EdgeInsets.symmetric(
-          vertical: defaultPadding,
-          horizontal: Responsive.isMobile(context)
-              ? defaultPadding
-              : defaultPadding * 4,
-        ),
-        child: Column(
-          children: [
-            Padding(
-              padding: const EdgeInsets.only(top: 16, bottom: 32),
-              child: Responsive.isLargeMobile(context)
-                  ? Column(
-                      children: const [
-                        TeamLAbout(),
-                        SizedBox(height: defaultPadding * 2),
-                        TeamLAccount(),
-                      ],
-                    )
-                  : Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: const [
-                        TeamLAbout(),
-                        TeamLAccount(),
-                      ],
-                    ),
-            ),
-            const Divider(color: Colors.white),
-            const SizedBox(height: defaultPadding),
-            const Text(
-              'جميع الحقوق محفوظة © 2021',
-              textAlign: TextAlign.center,
-              style: TextStyle(fontSize: 16, color: Colors.white),
-            ),
-            const FollowAsIconsWidget(),
-          ],
-        ),
+      child: Column(
+        children: [
+          Padding(
+            padding: const EdgeInsets.only(top: 16, bottom: 32),
+            child: Responsive.isLargeMobile(context)
+                ? Column(
+                    children: const [
+                      _AboutUs(),
+                      SizedBox(height: defaultPadding * 2),
+                      _ContactInfo(),
+                    ],
+                  )
+                : Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: const [
+                      _AboutUs(),
+                      _ContactInfo(),
+                    ],
+                  ),
+          ),
+          const Divider(color: Colors.white),
+          const SizedBox(height: defaultPadding),
+          const Text(
+            'جميع الحقوق محفوظة © 2021',
+            textAlign: TextAlign.center,
+            style: TextStyle(fontSize: 16, color: Colors.white),
+          ),
+          const OurAccountsLinks(),
+        ],
       ),
     );
   }
 }
 
-class TeamLAccount extends StatelessWidget {
-  const TeamLAccount({Key? key}) : super(key: key);
+class _ContactInfo extends StatelessWidget {
+  const _ContactInfo({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -67,7 +63,7 @@ class TeamLAccount extends StatelessWidget {
           'البريد الالكتروني',
           textAlign: TextAlign.end,
           style: TextStyle(
-            fontSize: 16.sp,
+            fontSize: 16,
             color: Theme.of(context).colorScheme.secondary,
           ),
         ),
@@ -77,9 +73,7 @@ class TeamLAccount extends StatelessWidget {
           textAlign: TextAlign.end,
           style: TextStyle(fontSize: 16, color: Colors.white),
         ),
-        const SizedBox(
-          height: defaultPadding
-        ),
+        const SizedBox(height: defaultPadding),
         Text(
           'رقم الهاتف',
           textAlign: TextAlign.end,
@@ -102,8 +96,8 @@ class TeamLAccount extends StatelessWidget {
   }
 }
 
-class TeamLAbout extends StatelessWidget {
-  const TeamLAbout({Key? key}) : super(key: key);
+class _AboutUs extends StatelessWidget {
+  const _AboutUs({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -111,28 +105,25 @@ class TeamLAbout extends StatelessWidget {
       crossAxisAlignment: Responsive.isLargeMobile(context)
           ? CrossAxisAlignment.center
           : CrossAxisAlignment.start,
+      mainAxisSize: MainAxisSize.min,
       children: [
-        Text('Team - L',
-            textAlign: TextAlign.end,
-            style: Theme.of(context)
-                .textTheme
-                .headline4
-                ?.copyWith(color: secondaryColor)),
-        const SizedBox(
-          height: 8,
+        Text(
+          'Team-L',
+          textAlign: TextAlign.end,
+          style: Theme.of(context)
+              .textTheme
+              .headline4
+              ?.copyWith(color: secondaryColor),
         ),
-        const SizedBox(
-          height: 8,
-        ),
+        const SizedBox(height: defaultPadding),
         SizedBox(
           width: Responsive.isLargeMobile(context) ? null : 350,
           child: Text(
             'فريق متخصص في مجال تصميم تطبيقات الاندرويد طبقا لعملائك وطبيعة منتجاتك وبخبرة كبيرة تمتد لسنوات عديدة',
-            maxLines: Responsive.isMobile(context) ? 6 : 3,
             textAlign: Responsive.isLargeMobile(context)
                 ? TextAlign.center
                 : TextAlign.start,
-            overflow: TextOverflow.ellipsis,
+            //overflow: TextOverflow.visible,
             style: Theme.of(context)
                 .textTheme
                 .subtitle1

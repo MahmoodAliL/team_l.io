@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:teaml/presentation/home/project_form/project_form_section.dart';
-import 'package:teaml/presentation/home/widgets/footer.dart';
-import 'package:teaml/presentation/home/widgets/header.dart';
+import 'package:teaml/presentation/home/sections/footer/footer.dart';
+import 'package:teaml/presentation/home/sections/header/header.dart';
+import 'package:teaml/presentation/home/sections/project_form/project_form_section.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -13,9 +13,9 @@ class HomePage extends StatelessWidget {
         showTrackOnHover: true,
         child: ListView(
           children: const [
-            HeaderWidget(),
+            HeaderSection(),
             ProjectFormSection(),
-            FooterWidget(),
+            FooterSection(),
           ],
         ),
       ),

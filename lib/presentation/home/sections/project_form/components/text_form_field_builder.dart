@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
+import 'package:teaml/presentation/core/constants.dart';
 
 class TextFormFieldBuilder extends StatelessWidget {
   const TextFormFieldBuilder({
@@ -17,11 +18,12 @@ class TextFormFieldBuilder extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return FormBuilderField(
-    
       builder: (field) {
         return TextFormField(
           autovalidateMode: AutovalidateMode.onUserInteraction,
-          decoration: InputDecoration(labelText: label),
+          decoration: InputDecoration(
+            labelText: label,
+          ),
           validator: validator,
           maxLines: maxLines,
           onSaved: (value) {

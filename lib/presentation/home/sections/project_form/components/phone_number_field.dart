@@ -24,7 +24,7 @@ class _PhoneNumberFieldState extends State<PhoneNumberField> {
             selectorType: PhoneInputSelectorType.BOTTOM_SHEET,
           ),
           initialValue: _phoneNumber,
-          ignoreBlank: false,
+         
           formatInput: false,
           locale: Localizations.localeOf(context).languageCode,
           autoValidateMode: AutovalidateMode.onUserInteraction,
@@ -38,7 +38,7 @@ class _PhoneNumberFieldState extends State<PhoneNumberField> {
             _isValid = isValid;
           },
           inputDecoration: const InputDecoration(
-            labelText: 'رقم الهاتف',
+            labelText: ' رقم الهاتف',
           ),
           onInputChanged: (phoneNumber) {
             field.didChange(phoneNumber);
